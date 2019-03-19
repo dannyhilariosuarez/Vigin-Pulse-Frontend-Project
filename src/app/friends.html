@@ -1,0 +1,87 @@
+<main role="main" class="container">
+  <div class="page-heading">
+    <h2 class="mt-4">Friends</h2>
+  </div>
+   
+
+  <div class="card-container">
+
+    <div ng-if="user.index <= 4" ng-repeat="user in users" class="card-friend block-update-card-main center">
+      <div ng-class="[user.isDisabled ? 'body-friend-disabled' : 'body-friend' ][update-card-body]">
+        <div>
+          <img ng-class="[user.isDisabled ? 'img-thumbnail-requested c-image-friend': 'img-thumbnail' ][img-responsive]"
+               src="{{user.picture.large}}" alt="...">
+        </div>
+        <div class="card-friend-name ">
+          <h5> {{ user.name.first }} {{ user.name.last }} </h5>
+        </div>
+      </div>
+      <div ng-class="[user.isDisabled ? 'detail-card-widgets': 'hidden' ]">
+        <div> 
+            <div>
+              <h6>Ranking</h6>
+            </div>
+            <div>
+              <h6>
+                {{ user.ranking }}
+              </h6>
+            </div> 
+        </div>
+        <div> 
+            <div>
+              <h6>Steps</h6>
+            </div>
+            <div>
+              <h6>
+                {{ user.steps }}
+              </h6>
+            </div> 
+        </div>
+        <div> 
+            <div>
+              <h6>Friends</h6>
+            </div>
+            <div>
+              <h6>
+                {{ user.friends }}
+              </h6>
+            </div> 
+        </div>
+
+
+      </div>
+      <div class="update-card-body card-footer-friend">
+        <div>
+          <button class="btn-send-request" ng-click="sendRequest(user)" ng-disabled="user.isDisabled">{{user.isDisabled?'Waiting For Approval': 'Send Friend Request'}}</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr />
+
+  <div class="card-container">
+    <div ng-if="user.index > 4 && user.index <= 8" ng-repeat="user in users" class="card-friend block-update-card-main center">
+      <div class="active-inactive"> 
+        <div class="active-circle" title="Online"></div> 
+      </div>
+      <div class="update-card-body body-friend">
+        <div id="div-img-profile">
+          <img class="img-thumbnail-unfollow c-image-friend" src="{{user.picture.large}}" alt="...">
+        </div>
+        <div class="card-friend-name ">
+          <h5> {{ user.name.first }} {{ user.name.last }}</h5>
+        </div>
+      </div>
+      <div class="update-card-body card-footer-friend">
+        <div>
+          <button class="btn-send-request">unfollow</button>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+
+</main>

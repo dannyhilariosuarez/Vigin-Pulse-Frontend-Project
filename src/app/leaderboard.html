@@ -1,0 +1,33 @@
+<main role="main" class="container">
+  <div class="page-heading">
+    <h2 class="mt-4">VP Leaderboard</h2>
+    <p class="lead">Friend Steps Leaderboard</p>
+
+    <div id="div-search">
+      <h3>Search friend</h3> <input type="text" ng-model="search.name.first" placeholder="Type a name" />
+    </div>
+  </div>
+
+
+
+  <ul class="friends-list">
+    <li class='friends-list--header'>
+      <span class="friend-column">Friend</span>
+      <span>Steps</span>
+      <span>Ranking</span>
+    </li>
+
+    <li ng-repeat="user in users | filter: search | orderBy : '-steps'">
+      <span class="friend-row">
+        <span><img class="leaderboard-img" src="{{user.picture.thumbnail}}" alt="..." /></span>
+        {{ user.name.first }} {{ user.name.last }}
+      </span>
+      <span>
+        {{ user.steps }}
+      </span>
+      <span>
+        {{$index + 1}}
+      </span>
+    </li>
+  </ul>
+</main>

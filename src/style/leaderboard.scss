@@ -1,0 +1,36 @@
+.friends-list {
+  max-width: 500px;
+  -webkit-padding-start: 0;
+  list-style-type: none;
+  margin: auto;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  &--header {
+    background: #000000;
+    color: #ffffff;
+  }
+
+  img {
+    height: 40px;
+    width: 40px;
+  }
+   
+}
+
+.friend-column{
+  width:60%;
+}
+
+.friend-row {
+  width: 50%;
+}
+
+#div-search {
+  padding: 15px;
+}
